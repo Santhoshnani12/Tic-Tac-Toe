@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden; 
+  font-family: 'Sacramento', cursive;
+  color: #496986;
+}
+
+.main-container {
+  height: 800px;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+}
+
+.heading {
+  max-width: 500px;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+.game-btn {
+  width: 175px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  color: #496986;
+  margin-top: 30px;
+  font-weight: bold;
+  border: 2px solid #496986;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.game-btn:hover {
+  color: white;
+  background: #496986;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 500px;
+}
+
+.player-head {
+  display: flex;
+  color: #9a9a9a;
+  font-size: 24px;
+}
+
+.player-head .player-x {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+
+.player-x.active {
+  color: #42bed7;
+  border-color: #42bed7;
+}
+
+.player-head .player-o {
+  flex: 1;
+  border-bottom: 5px solid #eee;
+  padding-bottom: 8px;
+}
+
+.player-o.active {
+  color: #d7bafb;
+  border-color: #d7bafb;
+}
+ 
+.tile-X {
+  color: #42bed7;
+}
+
+.tile-O {
+  color: #d7bafb;
+} 
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  flex-grow: 1;
+  padding: 10px;
+  font-family: 'Sacramento', cursive;
+}
+
+.board-tile {
+  font-size: 80px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.board-tile:not(:nth-child(3n)) {
+  border-right: 3px solid #496986;
+}
+
+.board-tile:not(:nth-last-child(-n+3))  {         /* doubt */ 
+  border-bottom: 3px solid #496986;
+}
+
+.board-tile:hover {
+  background: #eee;
+}
+
+.winner span{
+  color: #23ce6b;
+}
+
+@media only screen and (max-width: 1200px) {
+  .main-container {
+    flex-direction: column;
+  }
+  
+  .left {
+    margin-bottom: 50px;
+  }
+}
